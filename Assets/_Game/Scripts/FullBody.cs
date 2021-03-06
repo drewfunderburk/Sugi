@@ -21,16 +21,18 @@ public class FullBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(collide.IsTouching(child))
+        if(connect.GetComponent<PlayerStat>().gold)
         {
-            connect.GetComponent<Collider2D>().enabled = false;
-            connect.GetComponent<Rigidbody2D>().isKinematic = true;
-            connect.GetComponent<PlayerMovement>().enabled = false;
+            if(collide.IsTouching(child))
+            {
+                connect.GetComponent<Collider2D>().enabled = false;
+                connect.GetComponent<Rigidbody2D>().isKinematic = true;
+                connect.GetComponent<PlayerMovement>().enabled = false;
 
-            connect.transform.SetParent(transform);
-            connect.transform.position = new Vector3(transform.position.x, transform.position.y + 1,transform.position.z);
+                connect.transform.SetParent(transform);
+                connect.transform.position = new Vector3(transform.position.x, transform.position.y + 1,transform.position.z);
 
+            }
         }
     }
 }
