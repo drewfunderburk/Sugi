@@ -15,13 +15,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        float input = Input.GetAxisRaw("Horizontal");
-        
-        Vector2 movement = new Vector2(input * acceleration,rb.velocity.y);
-        rb.AddForce(movement);
-        float clampedX = Mathf.Clamp(rb.velocity.x,-maxSpeed,maxSpeed);
-        rb.velocity = new Vector2(clampedX, rb.velocity.y);
+        float movement = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(movement * maxSpeed, rb.velocity.y);
     }
 }

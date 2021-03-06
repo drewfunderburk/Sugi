@@ -37,10 +37,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnContinue()
     {
-        // Hide Panel
-        panel.SetActive(false);
         // Set timescale to 1
         Time.timeScale = 1;
+        // Hide Panel
+        panel.SetActive(false);
     }
 
     public void OnRestart()
@@ -57,6 +57,8 @@ public class PauseMenu : MonoBehaviour
 
     void Restart()
     {
+        // Set timescale to 1
+        Time.timeScale = 1;
         // Load the active scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
