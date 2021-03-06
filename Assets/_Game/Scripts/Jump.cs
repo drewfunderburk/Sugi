@@ -21,9 +21,9 @@ public class Jump : MonoBehaviour
         if(Input.GetAxisRaw("Jump") == 0)
             return;
 
-        RaycastHit2D hit1 = Physics2D.Raycast(frontCheck.position, -Vector2.up,1);
-        RaycastHit2D hit2 = Physics2D.Raycast(centerCheck.position, -Vector2.up,1);
-        RaycastHit2D hit3 = Physics2D.Raycast(backCheck.position, -Vector2.up,1);
+        RaycastHit2D hit1 = Physics2D.Raycast(frontCheck.position, -Vector2.up,0.1f);
+        RaycastHit2D hit2 = Physics2D.Raycast(centerCheck.position, -Vector2.up,0.1f);
+        RaycastHit2D hit3 = Physics2D.Raycast(backCheck.position, -Vector2.up,0.1f);
 
         if(hit1.collider != null || hit2.collider != null || hit3.collider != null)
             rb.AddForce(Vector2.up * jumpForce);
