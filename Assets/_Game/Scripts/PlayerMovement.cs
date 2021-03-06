@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
         
         Vector2 movement = new Vector2(input * acceleration,rb.velocity.y);
         rb.AddForce(movement);
-        rb.velocity = Vector2.ClampMagnitude(rb.velocity,maxSpeed);
+        float clampedX = Mathf.Clamp(rb.velocity.x,-maxSpeed,maxSpeed);
+        rb.velocity = new Vector2(clampedX, rb.velocity.y);
     }
 }
