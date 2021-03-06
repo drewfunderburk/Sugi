@@ -31,7 +31,7 @@ public class FullBody : MonoBehaviour
 
                 connect.transform.SetParent(transform);
                 connect.transform.position = new Vector3(transform.position.x, transform.position.y + 1,transform.position.z);
-
+                connect.transform.rotation = new Quaternion();
             }
         }
     }
