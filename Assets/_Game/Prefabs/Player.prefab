@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8acb3ab0b5b8124898f0baaa777223e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontCheck: {x: 0.3, y: -0.5, z: 0}
-  centerCheck: {x: 0, y: -0.51, z: 0}
-  backCheck: {x: -0.3, y: -0.5, z: 0}
+  frontCheck: {x: 0.3, y: -1, z: 0}
+  centerCheck: {x: 0, y: -1, z: 0}
+  backCheck: {x: -0.3, y: -1, z: 0}
   jumpForce: 15000
