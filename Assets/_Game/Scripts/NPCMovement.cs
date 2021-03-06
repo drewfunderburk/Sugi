@@ -21,12 +21,14 @@ public class NPCMovement : MonoBehaviour
         RaycastHit2D hit1 = Physics2D.Raycast(transform.position + frontCheck,Vector2.right,0.01f);
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position + backCheck,Vector2.left,0.01f);
         
-        if(hit1.collider != null || hit2.collider != null){
-            force *= -1;
-            transform.rotation = Quaternion.AngleAxis(180,Vector3.up);
+        if(hit1.collider != null){
+            force = Vector2.left;
+        }
+        else if(hit2.collider != null){
+            force = Vector2.right;
         }
         Debug.Log(force);
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        Debug.Log(hit1.collider);
         rb.AddForce(force * acceleration);
     }
 }
