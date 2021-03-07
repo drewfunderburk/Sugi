@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoldSplat : MonoBehaviour
 {
+    
     public GameObject player;
     Collider2D check;
     // Start is called before the first frame update

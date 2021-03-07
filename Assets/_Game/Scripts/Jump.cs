@@ -9,7 +9,7 @@ public class Jump : MonoBehaviour
     public Vector3 backCheck;
     public float jumpForce = 10;
     private Rigidbody2D rb;
-
+    public Animator animator;
     private bool canJump = true;
     void Start()
     {
@@ -20,7 +20,10 @@ public class Jump : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
+        {
             canJump = true;
+        }
+        animator.SetInteger("velocity",(int)rb.velocity.y);
     }
     void FixedUpdate()
     {
