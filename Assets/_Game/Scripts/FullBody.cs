@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FullBody : MonoBehaviour
 {
@@ -40,7 +41,16 @@ public class FullBody : MonoBehaviour
 
                 connect.transform.rotation = new Quaternion();
                 connect.GetComponent<Animator>().SetBool("isOnBody",true);
+                StartCoroutine(GoToNextScene());
             }
         }
+    }
+
+    IEnumerator GoToNextScene()
+    {
+        // Wait 5 seconds asynchronously
+        yield return new WaitForSeconds(5);
+        // Load next scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
