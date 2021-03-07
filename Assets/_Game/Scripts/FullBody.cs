@@ -9,7 +9,6 @@ public class FullBody : MonoBehaviour
     Collider2D child;
     public GameObject connect;
     public Animator animator;
-    public Animator headAnimator;
 
 
     // Start is called before the first frame update
@@ -40,7 +39,7 @@ public class FullBody : MonoBehaviour
                     connect.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y + 1.9f,transform.position.z);
 
                 connect.transform.rotation = new Quaternion();
-                headAnimator.SetBool("isOnBody",true);
+                connect.GetComponent<Animator>().SetBool("isOnBody",true);
             }
         }
     }

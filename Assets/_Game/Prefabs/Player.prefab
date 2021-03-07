@@ -155,6 +155,7 @@ MonoBehaviour:
   centerCheck: {x: 0, y: -1, z: 0}
   backCheck: {x: -1, y: -1, z: 0}
   jumpForce: 15000
+  animator: {fileID: 1585549621}
 --- !u!114 &1585549620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 0
+  animator: {fileID: 1585549621}
 --- !u!95 &1585549621
 Animator:
   serializedVersion: 3
