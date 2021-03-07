@@ -42,7 +42,6 @@ public class FadeToBlack : MonoBehaviour
         while (image.color.a < 1)
         {
             fadeAmount = image.color.a + (duration * Time.deltaTime);
-            Debug.Log(fadeAmount);
             image.color = new Color(0, 0, 0, fadeAmount);
             yield return null;
         }
