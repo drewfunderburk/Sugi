@@ -51,7 +51,6 @@ public class MusicPlayer : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("CreditsScene"))
         {
-            Debug.Log("Credits");
             PlayMadeWhole();
         }
     }
