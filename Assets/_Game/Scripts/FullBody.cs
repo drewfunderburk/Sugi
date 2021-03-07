@@ -23,7 +23,7 @@ public class FullBody : MonoBehaviour
     void Update()
     {
         animator.SetInteger("velocity", (int)rb.velocity.x);
-        
+
         if(connect.GetComponent<PlayerStat>().gold)
         {
             if(collide.IsTouching(child))
@@ -33,7 +33,7 @@ public class FullBody : MonoBehaviour
                 connect.GetComponent<PlayerMovement>().enabled = false;
 
                 connect.transform.SetParent(transform);
-                connect.transform.position = new Vector3(transform.position.x, transform.position.y + 1,transform.position.z);
+                connect.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y + 1.9f,transform.position.z);
                 connect.transform.rotation = new Quaternion();
             }
         }
