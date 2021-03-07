@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnContinue()
     {
+        Debug.Log("Continue");
         // Set timescale to 1
         Time.timeScale = 1;
         // Hide Panel
