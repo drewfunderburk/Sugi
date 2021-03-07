@@ -11,6 +11,7 @@ public class FullBody : MonoBehaviour
     public GameObject connect;
     public Animator animator;
 
+    public FadeToBlack fadeToBlack;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,8 @@ public class FullBody : MonoBehaviour
         // Wait 5 seconds asynchronously
         yield return new WaitForSeconds(5);
         // Load next scene
+        StartCoroutine(fadeToBlack.ToBlack(0.8f));
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
