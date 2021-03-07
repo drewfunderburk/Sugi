@@ -33,8 +33,13 @@ public class FullBody : MonoBehaviour
                 connect.GetComponent<PlayerMovement>().enabled = false;
 
                 connect.transform.SetParent(transform);
-                connect.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y + 1.9f,transform.position.z);
+                if(rb.velocity.x > 0)
+                    connect.transform.position = new Vector3(transform.position.x + 0.5f, transform.position.y + 1.9f,transform.position.z);
+                else if(rb.velocity.x < 0)
+                    connect.transform.position = new Vector3(transform.position.x - 0.5f, transform.position.y + 1.9f,transform.position.z);
+
                 connect.transform.rotation = new Quaternion();
+                connect.GetComponent<Animator>().SetBool("isOnBody",true);
             }
         }
     }
