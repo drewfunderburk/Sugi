@@ -10,12 +10,13 @@ public class FullBody : MonoBehaviour
     Collider2D child;
     public GameObject connect;
     public Animator animator;
-
+    public GameObject victoryImage;
     public FadeToBlack fadeToBlack;
 
     // Start is called before the first frame update
     void Start()
     {
+        victoryImage.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         collide = GetComponent<Collider2D>();
         child = connect.GetComponent<Collider2D>();
@@ -42,6 +43,7 @@ public class FullBody : MonoBehaviour
 
                 connect.transform.rotation = new Quaternion();
                 connect.GetComponent<Animator>().SetBool("isOnBody",true);
+                victoryImage.SetActive(true);
                 StartCoroutine(GoToNextScene());
             }
         }
