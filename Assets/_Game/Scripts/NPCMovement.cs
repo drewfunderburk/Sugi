@@ -8,7 +8,7 @@ public class NPCMovement : MonoBehaviour
     public Vector3 backCheck;
     public float acceleration = 10;
     Rigidbody2D rb;
-    Vector2 force = Vector2.right;
+    public Vector2 force = Vector2.right;
     // Start is called before the first frame update
     void Start()
     {   
@@ -18,15 +18,15 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + frontCheck,Vector2.right,0.1f);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + backCheck,Vector2.left,0.1f);
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + frontCheck,Vector2.right,0.01f);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + backCheck,Vector2.left,0.01f);
         
-        if(hit1.collider != null || hit2.collider != null)
-            force *= -1;
+        if(hit1.collider != null)
+            force = Vector2.left;
+        else if(hit2.collider != null)
+            force = Vector2.right;
 
-        Debug.Log(hit1.collider);
-        Debug.Log(hit2.collider);
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        rb.AddForce(force * acceleration);
+        
+        rb.velocity = new Vector2(force.x * acceleration,rb.velocity.y);
     }
 }

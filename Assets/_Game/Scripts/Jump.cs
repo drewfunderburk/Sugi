@@ -13,6 +13,7 @@ public class Jump : MonoBehaviour
     private bool canJump = true;
     void Start()
     {
+        //grabs the rigidbody component
         rb = GetComponent<Rigidbody2D>();
     }
 
