@@ -9,12 +9,8 @@ public class StartScreenSceneSwitcher : MonoBehaviour
         // If any key or mouse button pressed
         if (Input.anyKeyDown)
         {
-            // Check if more than one scene before changing
-            if (SceneManager.sceneCount > 1)
-            {
-                // Load scene at index 1
-                SceneManager.LoadScene(1);
-            }
+            // Load next scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

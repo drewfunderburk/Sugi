@@ -34,9 +34,6 @@ public class Jump : MonoBehaviour
             RaycastHit2D hit2 = Physics2D.Raycast(transform.position + centerCheck, -Vector2.up, 0.1f);
             RaycastHit2D hit3 = Physics2D.Raycast(transform.position + backCheck, -Vector2.up, 0.1f);
 
-            Debug.Log(hit1.collider);
-            Debug.Log(hit2.collider);
-            Debug.Log(hit3.collider);
             if (hit1.collider != null || hit2.collider != null || hit3.collider != null)
             {
                 rb.AddForce(Vector2.up * jumpForce);
