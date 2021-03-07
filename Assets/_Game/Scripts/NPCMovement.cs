@@ -18,8 +18,8 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + frontCheck,Vector2.right,0.01f);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + backCheck,Vector2.left,0.01f);
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + frontCheck,Vector2.right,0.3f);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + backCheck,Vector2.left,0.3f);
         
         if(hit1.collider != null)
             force = Vector2.left;
