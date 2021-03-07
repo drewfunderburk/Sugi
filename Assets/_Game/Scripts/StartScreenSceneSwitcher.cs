@@ -4,13 +4,22 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartScreenSceneSwitcher : MonoBehaviour
 {
+    public FadeToBlack fadeToBlack;
     void Update()
     {
         // If any key or mouse button pressed
         if (Input.anyKeyDown)
         {
             // Load next scene
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(nextScene());
         }
+    }
+
+    IEnumerator nextScene()
+    {
+        StartCoroutine(fadeToBlack.ToBlack(0.8f));
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 }
