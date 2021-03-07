@@ -8,6 +8,7 @@ public class FullBody : MonoBehaviour
     Collider2D collide;
     Collider2D child;
     public GameObject connect;
+    public Animator animator;
 
 
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class FullBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        animator.SetInteger("velocity", (int)rb.velocity.x);
+        
         if(connect.GetComponent<PlayerStat>().gold)
         {
             if(collide.IsTouching(child))
